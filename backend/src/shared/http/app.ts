@@ -3,7 +3,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import http from 'http';
 import cors from 'cors';
 import { Server } from 'socket.io';
-import AppError from '../errors/AppError';
+import { AppError } from '../errors/AppError';
 import { router } from './routes';
 
 const app = express();
@@ -34,20 +34,6 @@ app.get('/signin/callback', (req: Request, res: Response) => {
   const { code } = req.query;
 
   return res.json(code);
-});
-
-app.use((error: Error, req: Request, res: Response, _next: NextFunction) => {
-  if (error instanceof AppError) {
-    return res.status(error.statusCode).json({
-      status: 'error',
-      message: error.message,
-    });
-  }
-
-  return res.status(500).json({
-    status: 'error',
-    message: 'Internal server error',
-  });
 });
 
 export { serverHttp, io };

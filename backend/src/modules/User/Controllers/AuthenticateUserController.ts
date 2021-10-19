@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import AppError from '../../../shared/errors/AppError';
+import { AppError } from '../../../shared/errors/AppError';
 import { AuthenticateUserService } from '../Services/AuthenticateUserService';
 
 class AuthenticateUserController {
@@ -12,7 +12,9 @@ class AuthenticateUserController {
       const result = await service.execute(code);
       return res.json(result);
     } catch (error) {
-      throw new AppError(`Oooops! something happend: ${error.message}`);
+      return res
+        .status(400)
+        .json({ error: `Oooops! something happend: ${error.message}` });
     }
   }
 }
