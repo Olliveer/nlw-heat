@@ -1,0 +1,216 @@
+@import '../../styles/breakpoints.scss';
+
+.sendMessageFormWrapper {
+  background: #1b1b1f;
+  padding: 24px;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+
+  .signOutButton {
+    background: transparent;
+    border: 0;
+    color: #c4c4cc;
+
+    position: absolute;
+    left: 24px;
+    top: 24px;
+
+    cursor: pointer;
+
+    transition: brightness 2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .userInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .userImage {
+      padding: 3px;
+      background: linear-gradient(100deg, #ff008e 0.48%, #ffcd1e 100%);
+      border-radius: 50%;
+      line-height: 0;
+
+      img {
+        width: 94px;
+        height: 94px;
+        border-radius: 50%;
+        border: 6px solid #121214;
+      }
+    }
+
+    .userName {
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      margin-top: 16px;
+    }
+
+    .userGithub {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      color: #c4c4cc;
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .sendMessageForm {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    margin-top: 48px;
+
+    background: #202024;
+
+    label {
+      padding: 18px 24px;
+      font-size: 1.25rem;
+      background: #29292e;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    textarea {
+      background: transparent;
+      border: 0;
+      padding: 24px;
+      resize: none;
+      height: 160px;
+      color: #e1e1e6;
+      font-size: 16px;
+      line-height: 24px;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &::placeholder {
+        color: #8d8d99;
+      }
+    }
+
+    button {
+      align-self: flex-end;
+      background: #ff008e;
+      margin: 24px;
+      padding: 0 32px;
+      cursor: pointer;
+      height: 40px;
+      border: 0;
+      color: #fff;
+
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: brightness 2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  // less than or equal to 360px
+  @include media('<=phone') {
+    margin: 0 5px;
+
+    .userInformation {
+      .userImage {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    .sendMessageForm {
+      margin-top: 24px;
+      textarea {
+        height: 100px;
+      }
+    }
+  }
+
+  //  greater than 360px and less than or eqaul to 425px
+  @include media('>phone', '<=425px') {
+    margin: 0 5px;
+
+    .userInformation {
+      .userImage {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    .sendMessageForm {
+      margin-top: 24px;
+      textarea {
+        height: 100px;
+      }
+    }
+  }
+
+  // greater than 425px and less than or eqaul to 768px
+  @include media('>425px', '<=tablet') {
+    .userInformation {
+      .userImage {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    .sendMessageForm {
+      margin-top: 24px;
+      textarea {
+        height: 80px;
+      }
+    }
+  }
+
+  @include media('>tablet', '<desktop') {
+    .userInformation {
+      .userImage {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
+    .sendMessageForm {
+      margin-top: 24px;
+      textarea {
+        height: 80px;
+      }
+    }
+  }
+  // if the screen is going to be greater than or equal to 1366px
+  @include media('>=desktop') {
+  }
+  // if the screen is going to be greater than or equal to 1920px
+  @include media('>=LGdesktop', 'retina2x') {
+  }
+}

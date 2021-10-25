@@ -1,0 +1,83 @@
+@import '../../styles/breakpoints.scss';
+
+.loginBoxWrapper {
+  height: 100vh;
+  width: 100%;
+
+  background: #17171a url('../../assets/banner-girl.png') no-repeat center top;
+
+  padding: 440px 80px 0;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  strong {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+
+  .signInWithGithub {
+    background: #ffcd1e;
+    margin-top: 32px;
+    padding: 0 40px;
+    height: 56px;
+
+    color: #09090a;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 16px;
+    }
+
+    transition: brightness 2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  // less than or equal to 360px
+  @include media('<=phone') {
+    background: #17171a url('../../assets/background.svg') no-repeat center
+      bottom;
+    height: 100%;
+    padding: 10px 50px 0;
+  }
+
+  // if the breakpoint is greater than 360px and less than or eqaul to 425px
+  @include media('>phone', '<=425px') {
+    background: #17171a url('../../assets/background.svg') no-repeat content-box
+      bottom;
+    background-size: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  // greater than 425px and less than or eqaul to 768px
+  @include media('>425px', '<=tablet') {
+    background: #17171a url('../../assets/background.svg') no-repeat content-box
+      bottom;
+    background-size: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  @include media('>tablet', '<desktop') {
+    background: #17171a url('../../assets/background.svg') no-repeat content-box
+      bottom;
+    background-size: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}

@@ -1,9 +1,8 @@
-import 'dotenv/config';
-import express, { NextFunction, Request, Response } from 'express';
-import http from 'http';
 import cors from 'cors';
+import 'dotenv/config';
+import express from 'express';
+import http from 'http';
 import { Server } from 'socket.io';
-import { AppError } from '../errors/AppError';
 import { router } from './routes';
 
 const app = express();
@@ -23,17 +22,5 @@ io.on('connection', (socket) => {
 
 app.use(express.json());
 app.use(router);
-
-app.get('/github', (req: Request, res: Response) => {
-  res.redirect(
-    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`
-  );
-});
-
-app.get('/signin/callback', (req: Request, res: Response) => {
-  const { code } = req.query;
-
-  return res.json(code);
-});
 
 export { serverHttp, io };

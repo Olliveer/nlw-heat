@@ -1,0 +1,56 @@
+@import '../styles/breakpoints.scss';
+
+.contentWrapper {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 453px;
+  column-gap: 120px;
+
+  position: relative;
+
+  // less than or equal to 360px
+  @include media('<=phone') {
+    grid-template-columns: 1fr;
+  }
+  // greater than 360px and less than or eqaul to 425px
+  @include media('>phone', '<=425px') {
+    grid-template-columns: 1fr;
+  }
+
+  //  greater than 425px and less than or eqaul to 768px
+  @include media('>425px', '<=tablet') {
+    grid-template-columns: 1fr;
+  }
+
+  @include media('>tablet', '<desktop') {
+    grid-template-columns: 1fr;
+  }
+  // if the screen is going to be greater than or equal to 1366px
+  @include media('>=desktop') {
+  }
+  // if the screen is going to be greater than or equal to 1920px
+  @include media('>=LGdesktop', 'retina2x') {
+  }
+}
+
+.contentSigned::before {
+  content: '';
+
+  height: 100vh;
+  width: 490px;
+  background: url('../assets/background.svg') no-repeat;
+
+  background-size: cover;
+
+  position: absolute;
+
+  right: -240px;
+  top: 0;
+
+  @include media('<desktop') {
+    display: none;
+  }
+}
