@@ -48,23 +48,6 @@
         border: 6px solid #121214;
       }
     }
-
-    .userName {
-      font-size: 1.5rem;
-      line-height: 1.875rem;
-      margin-top: 16px;
-    }
-
-    .userGithub {
-      display: flex;
-      align-items: center;
-      margin-top: 8px;
-      color: #c4c4cc;
-
-      svg {
-        margin-right: 8px;
-      }
-    }
   }
 
   .sendMessageForm {
@@ -99,6 +82,7 @@
 
       &::placeholder {
         color: #8d8d99;
+        size: 0.825rem;
       }
     }
 
@@ -112,7 +96,7 @@
       border: 0;
       color: #fff;
 
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: bold;
       text-transform: uppercase;
       text-decoration: none;
@@ -132,7 +116,7 @@
   // less than or equal to 360px
   @include media('<=phone') {
     margin: 0 5px;
-
+    padding: 0;
     .userInformation {
       .userImage {
         img {
@@ -152,21 +136,25 @@
 
   //  greater than 360px and less than or eqaul to 425px
   @include media('>phone', '<=425px') {
-    margin: 0 5px;
-
+    padding: 0;
     .userInformation {
       .userImage {
+        margin-top: 20px;
         img {
-          width: 45px;
-          height: 45px;
+          width: 35px;
+          height: 35px;
         }
       }
     }
 
     .sendMessageForm {
-      margin-top: 24px;
+      margin-top: 14px;
       textarea {
-        height: 100px;
+        height: 70px;
+      }
+
+      label {
+        padding: 14px 20px;
       }
     }
   }

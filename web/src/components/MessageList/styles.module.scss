@@ -26,7 +26,7 @@
     word-wrap: break-word;
     max-width: 420px;
     &:nth-child(2) {
-      margin-left: 80px;
+      margin-left: 50px;
     }
 
     .messageContent {
@@ -66,7 +66,7 @@
     .messageList {
       margin: 0 auto;
       .message {
-        max-width: 320px;
+        max-width: 220px;
         .messageUser {
           margin-top: 8px;
         }
@@ -77,12 +77,16 @@
   // if the breakpoint is greater than 360px and less than or eqaul to 425px
   @include media('>phone', '<=425px') {
     margin: 0 auto;
+    img {
+      height: 20px;
+    }
+
     .messageList {
-      margin: 0 auto 40px;
+      margin: 0 auto;
       .message {
-        max-width: 320px;
+        max-width: 220px;
         .messageUser {
-          margin-top: 8px;
+          margin-top: 5px;
         }
       }
     }
@@ -94,6 +98,7 @@
     .messageList {
       margin: 0 auto;
       .message {
+        max-width: 320px;
         .messageUser {
           margin-top: 8px;
         }

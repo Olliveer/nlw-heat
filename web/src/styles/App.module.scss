@@ -53,4 +53,15 @@
   @include media('<desktop') {
     display: none;
   }
+
+  // if the screen is going to be greater than or equal to 1366px
+  @include media('>=desktop') {
+    width: 420px;
+    right: -200px;
+  }
+  // if the screen is going to be greater than or equal to 1920px
+  @include media('>=LGdesktop', 'retina2x') {
+    width: 420px;
+    right: -200px;
+  }
 }

@@ -36,15 +36,16 @@ export function SendMessageForm() {
         <div className={styles.userImage}>
           <img src={user?.avatar_url} alt={user?.name} />
         </div>
-        <strong className={styles.userName}>{user?.name}</strong>
-
-        <span className={styles.userGithub}>
-          <VscGithubInverted size={16} /> {user?.login}
-        </span>
+        <div className={styles.userNameContainer}>
+          <strong className={styles.userName}>{user?.name}</strong> -
+          <span className={styles.userGithub}>
+            <VscGithubInverted size={16} /> {user?.login}
+          </span>
+        </div>
       </header>
 
       <form onSubmit={handleSendMessage} className={styles.sendMessageForm}>
-        <label htmlFor="message">Menssagem</label>
+        <label htmlFor="message">Mensagem</label>
 
         <textarea
           name="message"
@@ -58,7 +59,7 @@ export function SendMessageForm() {
           {isLoding ? (
             <ReactLoading type="bubbles" color="#fff" />
           ) : (
-            'Enviar menssagem'
+            'Enviar mensagem'
           )}
         </button>
       </form>
